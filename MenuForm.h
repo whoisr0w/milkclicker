@@ -42,6 +42,8 @@ namespace MilkClicker {
 
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -62,6 +64,8 @@ namespace MilkClicker {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -123,12 +127,30 @@ namespace MilkClicker {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MenuForm::Button4_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(112, 280);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(126, 20);
+			this->textBox1->TabIndex = 6;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(109, 264);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(100, 13);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"¬ведите свой ник:";
+			// 
 			// MenuForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(348, 371);
 			this->ControlBox = false;
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
@@ -141,10 +163,11 @@ namespace MilkClicker {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-		int infoclick = 0;
+	int infoclick = 0;
 	private: System::Void MenuForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		pictureBox1->Controls->Add(pictureBox2);
 	}
@@ -165,8 +188,10 @@ namespace MilkClicker {
 		}
 	}
 private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	GameForm^ gameform = gcnew GameForm();
 	this->Hide();
-
+	gameform->Show();
 }
 };
 }

@@ -1,0 +1,13 @@
+﻿  GameForm.cpp
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2065: MenuForm: необъявленный идентификатор
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2065: frm: необъявленный идентификатор
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2061: синтаксическая ошибка: идентификатор "MenuForm"
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(194): error C2065: frm: необъявленный идентификатор
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(17): error C2011: MilkClicker::GameForm: переопределение типа "class"
+  C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(17): note:  см. объявление "MilkClicker::GameForm"
+  MenuForm.cpp
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2065: MenuForm: необъявленный идентификатор
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2065: frm: необъявленный идентификатор
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(193): error C2061: синтаксическая ошибка: идентификатор "MenuForm"
+C:\Users\Администратор\Documents\Арсений Наянов\MilkClicker\GameForm.h(194): error C2065: frm: необъявленный идентификатор
+  Создание кода...

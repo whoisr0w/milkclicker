@@ -1,6 +1,5 @@
 #include "MenuForm.h"
 #include <Windows.h>
-#include "GameForm.h"
 
 using namespace MilkClicker;
 
