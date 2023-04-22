@@ -133,12 +133,16 @@
   <ItemGroup>
     <ClCompile Include="GameForm.cpp" />
     <ClCompile Include="MenuForm.cpp" />
+    <ClCompile Include="ShopForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ShopForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopForm.resx">
+      <DependentUpon>ShopForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

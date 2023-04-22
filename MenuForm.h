@@ -22,7 +22,15 @@ namespace MilkClicker {
 			//
 			//TODO: добавьте код конструктора
 			//
+			gameform = gcnew GameForm();
+			gameform->Owner = this;
+			gameform->Hide();
+
 		}
+
+		property String^ NickName;
+
+	private: GameForm^ gameform;
 
 	protected:
 		/// <summary>
@@ -49,7 +57,7 @@ namespace MilkClicker {
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -167,11 +175,11 @@ namespace MilkClicker {
 
 		}
 #pragma endregion
-	int infoclick = 0;
-	private: System::Void MenuForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		int infoclick = 0;
+	private: System::Void MenuForm_Load(System::Object ^ sender, System::EventArgs ^ e) {
 		pictureBox1->Controls->Add(pictureBox2);
 	}
-	private: System::Void Button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Button3_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		if (infoclick == 10) {
 			MessageBox::Show("Тебе так нравится нажимать на кнопочки...", "О программе...", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			infoclick = 0;
@@ -181,17 +189,17 @@ namespace MilkClicker {
 			infoclick += 1;
 		}
 	}
-	private: System::Void Button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (MessageBox::Show("Вы действительно хотите выйти из игры?", "MilkClicker", MessageBoxButtons::YesNo, MessageBoxIcon::Information) == System::Windows::Forms::DialogResult::Yes)
+	private: System::Void Button4_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		if (MessageBox::Show("Вы действительно хотите выйти из игры?\nПредупреждение: Если вы выйдете из игры весь прогресс будет УТЕРЯН!", "MilkClicker", MessageBoxButtons::YesNo, MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
 		{
 			Application::Exit();
 		}
 	}
-private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	GameForm^ gameform = gcnew GameForm();
-	this->Hide();
-	gameform->Show();
-}
-};
+	private: System::Void Button1_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		NickName = this->textBox1->Text;
+		gameform->NickName = this->NickName;
+		this->Hide();
+		gameform->Show();
+	}
+	};
 }

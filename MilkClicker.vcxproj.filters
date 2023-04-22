@@ -21,12 +21,18 @@
     <ClCompile Include="GameForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ShopForm.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="GameForm.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
