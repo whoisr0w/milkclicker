@@ -80,7 +80,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\sprites\\bg-milkclicker.png";
+			this->pictureBox1->ImageLocation = L"sprites\\bg-milkclicker.png";
 			this->pictureBox1->Location = System::Drawing::Point(0, -2);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(348, 373);
@@ -91,7 +91,7 @@ namespace MilkClicker {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\sprites\\milkclicker-name.png";
+			this->pictureBox2->ImageLocation = L"sprites\\milkclicker-name.png";
 			this->pictureBox2->Location = System::Drawing::Point(12, 12);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(324, 75);
@@ -166,7 +166,7 @@ namespace MilkClicker {
 			this->Controls->Add(this->pictureBox1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MenuForm";
-			this->Text = L"MilkClicker";
+			this->Text = L"MilkClicker | Главное меню";
 			this->Load += gcnew System::EventHandler(this, &MenuForm::MenuForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();

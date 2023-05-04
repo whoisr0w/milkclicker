@@ -104,8 +104,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\bg-milkclicke"
-				L"r-game.png";
+			this->pictureBox1->ImageLocation = L"sprites\\bg-milkclicker-game.png";
 			this->pictureBox1->Location = System::Drawing::Point(-1, -1);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(635, 335);
@@ -115,7 +114,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\line.png";
+			this->pictureBox2->ImageLocation = L"sprites\\line.png";
 			this->pictureBox2->Location = System::Drawing::Point(631, 0);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(21, 334);
@@ -125,8 +124,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox3
 			// 
-			this->pictureBox3->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\bg-milkclicke"
-				L"r.png";
+			this->pictureBox3->ImageLocation = L"sprites\\bg-milkclicker.png";
 			this->pictureBox3->Location = System::Drawing::Point(651, -1);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(192, 334);
@@ -137,8 +135,7 @@ namespace MilkClicker {
 			// pictureBox4
 			// 
 			this->pictureBox4->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox4->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\milkclicker-s"
-				L"omething.png";
+			this->pictureBox4->ImageLocation = L"sprites\\milkclicker-something.png";
 			this->pictureBox4->Location = System::Drawing::Point(211, 133);
 			this->pictureBox4->Name = L"pictureBox4";
 			this->pictureBox4->Size = System::Drawing::Size(207, 78);
@@ -150,7 +147,7 @@ namespace MilkClicker {
 			// pictureBox5
 			// 
 			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox5->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\bucket0.png";
+			this->pictureBox5->ImageLocation = L"sprites\\bucket.png";
 			this->pictureBox5->Location = System::Drawing::Point(251, 217);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(128, 117);
@@ -176,6 +173,7 @@ namespace MilkClicker {
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Магазин";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &GameForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -217,7 +215,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox6
 			// 
-			this->pictureBox6->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\struya.png";
+			this->pictureBox6->ImageLocation = L"sprites\\struya.png";
 			this->pictureBox6->Location = System::Drawing::Point(283, 188);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(10, 67);
@@ -228,7 +226,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox7
 			// 
-			this->pictureBox7->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\struya.png";
+			this->pictureBox7->ImageLocation = L"sprites\\struya.png";
 			this->pictureBox7->Location = System::Drawing::Point(309, 188);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(10, 67);
@@ -239,7 +237,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox8
 			// 
-			this->pictureBox8->ImageLocation = L"C:\\Users\\Администратор\\Documents\\Арсений Наянов\\MilkClicker\\sprites\\struya.png";
+			this->pictureBox8->ImageLocation = L"sprites\\struya.png";
 			this->pictureBox8->Location = System::Drawing::Point(335, 186);
 			this->pictureBox8->Name = L"pictureBox8";
 			this->pictureBox8->Size = System::Drawing::Size(10, 69);
@@ -275,7 +273,7 @@ namespace MilkClicker {
 			this->Controls->Add(this->pictureBox1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GameForm";
-			this->Text = L"MilkClicker";
+			this->Text = L"MilkClicker | Ферма";
 			this->Activated += gcnew System::EventHandler(this, &GameForm::GameForm_Activated);
 			this->Load += gcnew System::EventHandler(this, &GameForm::GameForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -368,6 +366,12 @@ private: System::Void StruyaTimer_Tick(System::Object^ sender, System::EventArgs
 	pictureBox6->Visible = false;
 	pictureBox7->Visible = false;
 	pictureBox8->Visible = false;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	shopform->balancemoney = this->balancemoney;
+	shopform->label1->Text = "Деньги: " + Convert::ToString(balancemoney) + " рублей";
+	shopform->Show();
+	this->Hide();
 }
 };
 }
