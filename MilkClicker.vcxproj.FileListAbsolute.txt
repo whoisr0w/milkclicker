@@ -1,0 +1,7 @@
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.vcxproj.AssemblyReference.cache
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.vcxproj.SuggestedBindingRedirects.cache
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.GameForm.resources
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.MenuForm.resources
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.ShopForm.resources
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.vcxproj.GenerateResource.cache
+F:\ARSEN\milkclicker-main\x64\Release\MilkClicker.exe
