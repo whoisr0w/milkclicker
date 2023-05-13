@@ -24,6 +24,19 @@ namespace MilkClicker {
 		}
 		property double balancemoney;
 
+	private:
+		String^ myVariable = "0";
+
+	public:
+		property String^ MyVariable {
+			String^ get() {
+				return myVariable;
+			}
+			void set(String^ value) {
+				myVariable = value;
+			}
+		};
+
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -170,6 +183,7 @@ namespace MilkClicker {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->ImageLocation = L"sprites\\shop-bg.png";
 			this->pictureBox1->Location = System::Drawing::Point(-1, -2);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -200,6 +214,7 @@ namespace MilkClicker {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->ImageLocation = L"sprites\\bucket.png";
 			this->pictureBox2->Location = System::Drawing::Point(38, 104);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -563,6 +578,7 @@ namespace MilkClicker {
 			this->button3->TabIndex = 39;
 			this->button3->Text = L"Купить";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &ShopForm::Button3_Click);
 			// 
 			// button4
 			// 
@@ -734,7 +750,21 @@ namespace MilkClicker {
 
 		}
 #pragma endregion
+		int bucket1 = 1;
+		int bucket2 = 0;
+		int bucket3 = 0;
+		int bucket4 = 0;
+		int bucket5 = 0;
+		int bucket6 = 0;
+		int korm1 = 1;
+		int korm2 = 0;
+		int korm3 = 0;
+		int korm4 = 0;
+		int korm5 = 0;
+		int korm6 = 0;
+		
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 		Form^ gameform = this->Owner;
 		gameform->Show();
 		this->Hide();
@@ -753,5 +783,16 @@ namespace MilkClicker {
 		pictureBox1->Controls->Add(pictureBox12);
 		pictureBox1->Controls->Add(pictureBox13);
 	}
+private: System::Void Button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	//if (balancemoney >= 1)
+	//{
+		//balancemoney -= 1;
+		myVariable = Convert::ToString(Convert::ToDouble(myVariable) - 1);
+		this->button3->Text = "Выбрано";
+		this->button3->Enabled = false;
+		this->label1->Text = "Деньги: " + myVariable + " рублей";
+		
+	//}
+}
 };
 }

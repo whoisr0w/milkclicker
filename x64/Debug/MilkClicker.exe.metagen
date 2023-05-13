@@ -22,21 +22,25 @@ Class MilkClicker.ShopForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
   Fields:
     System.Windows.Forms.Label label1 : Public
   Properties:
+    System.String MyVariable 'get set' : 
     Double balancemoney 'get set' : 
   Methods:
     get_balancemoney(): PrivateScope, Public, HideBySig, SpecialName
     set_balancemoney(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_MyVariable(): PrivateScope, Public, HideBySig, SpecialName
+    set_MyVariable(String): PrivateScope, Public, HideBySig, SpecialName
 Class MilkClicker.GameForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double balancemoney : Public
+    System.Windows.Forms.PictureBox pictureBox5 : Public
+    System.Windows.Forms.Label label3 : Public
   Properties:
-    Double balancemoney 'get set' : 
     System.String NickName 'get set' : 
   Methods:
     get_NickName(): PrivateScope, Public, HideBySig, SpecialName
     set_NickName(String): PrivateScope, Public, HideBySig, SpecialName
-    get_balancemoney(): PrivateScope, Public, HideBySig, SpecialName
-    set_balancemoney(Double): PrivateScope, Public, HideBySig, SpecialName
 Class MilkClicker.MenuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

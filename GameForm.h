@@ -28,7 +28,7 @@ namespace MilkClicker {
 			shopform->Hide();
 		}
 		property String^ NickName;
-		property double balancemoney;
+		double balancemoney;
 
 	private: ShopForm^ shopform;
 
@@ -44,17 +44,16 @@ namespace MilkClicker {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	protected:
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::PictureBox^ pictureBox5;
+	public: System::Windows::Forms::PictureBox^ pictureBox5;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+	public: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 	private: System::Windows::Forms::PictureBox^ pictureBox7;
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
@@ -111,6 +110,7 @@ namespace MilkClicker {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &GameForm::PictureBox1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -299,6 +299,7 @@ namespace MilkClicker {
 		pictureBox1->Controls->Add(pictureBox4);
 		pictureBox1->Controls->Add(pictureBox5);
 		
+		
 	}
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Form^ menuform = this->Owner;
@@ -307,6 +308,8 @@ namespace MilkClicker {
 	}
 	private: System::Void GameForm_Activated(System::Object^ sender, System::EventArgs^ e) {
 		label1->Text = "Доярка: " + this->NickName;
+		balancemoney = shopform->balancemoney;
+		label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
 	}
 	private: System::Void PictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (balancemilk < backpack)
@@ -336,24 +339,28 @@ namespace MilkClicker {
 				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось нормально.\nВы продали его по цене 1 рубль за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				balancemoney = balancemoney + balancemilk;
 				balancemilk = 0;
+				this->shopform->MyVariable = Convert::ToString(balancemoney);
 				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + Convert::ToString(balancemoney) + " рублей";
+				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
 			}
 			else if (randomsell == 2)
 			{
 				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось замечательно, разобрали мгновенно.\nВы продали его по цене 2 рубля за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				balancemoney = balancemoney + (balancemilk * 2);
 				balancemilk = 0;
+				this->shopform->MyVariable = Convert::ToString(balancemoney);
+				
 				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + Convert::ToString(balancemoney) + " рублей";
+				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
 			}
 			else if (randomsell == 3)
 			{
 				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось очень плохо.\nВы продали его по цене 0.5 рубля за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				balancemoney = balancemoney + (balancemilk * 0.5);
 				balancemilk = 0;
+				this->shopform->MyVariable = Convert::ToString(balancemoney);
 				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + Convert::ToString(balancemoney) + " рублей";
+				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
 			}
 		}
 		else
@@ -368,10 +375,12 @@ private: System::Void StruyaTimer_Tick(System::Object^ sender, System::EventArgs
 	pictureBox8->Visible = false;
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	shopform->balancemoney = this->balancemoney;
-	shopform->label1->Text = "Деньги: " + Convert::ToString(balancemoney) + " рублей";
+	
+	shopform->label1->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
 	shopform->Show();
 	this->Hide();
+}
+private: System::Void PictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
