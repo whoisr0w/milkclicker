@@ -176,6 +176,7 @@ namespace MilkClicker {
 		}
 #pragma endregion
 		int infoclick = 0;
+		int history = 0;
 	private: System::Void MenuForm_Load(System::Object ^ sender, System::EventArgs ^ e) {
 		pictureBox1->Controls->Add(pictureBox2);
 	}
@@ -200,6 +201,11 @@ namespace MilkClicker {
 		gameform->NickName = this->NickName;
 		this->Hide();
 		gameform->Show();
+		if (history == 0)
+		{
+			history = 1;
+			MessageBox::Show("Добро пожаловать на ферму!\nВы фермер и у вас есть мечта!\nВы мечтаете о том чтобы купить квартиру и уехать жить в город.\nНо у вас совсем нет денег.\nПоэтому вы решили начать бизнес по продаже молока.\nПосмотрим получится ли у вас...", "О программе...", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 	}
 	};
 }

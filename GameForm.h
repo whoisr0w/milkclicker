@@ -1,4 +1,4 @@
-#include <stdlib.h>
+п»ї#include <stdlib.h>
 #pragma once
 #include "ShopForm.h"
 
@@ -12,7 +12,7 @@ namespace MilkClicker {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для GameForm
+	/// РЎРІРѕРґРєР° РґР»СЏ GameForm
 	/// </summary>
 	public ref class GameForm : public System::Windows::Forms::Form
 	{
@@ -21,7 +21,7 @@ namespace MilkClicker {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 			shopform = gcnew ShopForm();
 			shopform->Owner = this;
@@ -29,12 +29,14 @@ namespace MilkClicker {
 		}
 		property String^ NickName;
 		double balancemoney;
+	private: System::Windows::Forms::Button^ button4;
+	public:
 
 	private: ShopForm^ shopform;
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~GameForm()
 		{
@@ -63,14 +65,14 @@ namespace MilkClicker {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -91,6 +93,7 @@ namespace MilkClicker {
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->StruyaTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -110,7 +113,6 @@ namespace MilkClicker {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &GameForm::PictureBox1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -161,7 +163,7 @@ namespace MilkClicker {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(159, 34);
 			this->button1->TabIndex = 5;
-			this->button1->Text = L"Выйти в главное меню";
+			this->button1->Text = L"Р’С‹Р№С‚Рё РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &GameForm::Button1_Click);
 			// 
@@ -171,7 +173,7 @@ namespace MilkClicker {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(159, 34);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"Магазин";
+			this->button2->Text = L"РњР°РіР°Р·РёРЅ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &GameForm::button2_Click);
 			// 
@@ -181,7 +183,7 @@ namespace MilkClicker {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(159, 34);
 			this->button3->TabIndex = 7;
-			this->button3->Text = L"Продать на базаре";
+			this->button3->Text = L"РџСЂРѕРґР°С‚СЊ РЅР° Р±Р°Р·Р°СЂРµ";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &GameForm::Button3_Click);
 			// 
@@ -202,7 +204,7 @@ namespace MilkClicker {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(113, 13);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"Молоко: 0/10 литров";
+			this->label2->Text = L"РњРѕР»РѕРєРѕ: 0/10 Р»РёС‚СЂРѕРІ";
 			// 
 			// label3
 			// 
@@ -211,7 +213,7 @@ namespace MilkClicker {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(95, 13);
 			this->label3->TabIndex = 10;
-			this->label3->Text = L"Деньги: 0 рублей";
+			this->label3->Text = L"Р”РµРЅСЊРіРё: 0 СЂСѓР±Р»РµР№";
 			// 
 			// pictureBox6
 			// 
@@ -251,12 +253,23 @@ namespace MilkClicker {
 			this->StruyaTimer->Interval = 500;
 			this->StruyaTimer->Tick += gcnew System::EventHandler(this, &GameForm::StruyaTimer_Tick);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(665, 247);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(159, 34);
+			this->button4->TabIndex = 14;
+			this->button4->Text = L"РЈРµС…Р°С‚СЊ Р¶РёС‚СЊ РІ РіРѕСЂРѕРґ: 3000000 СЂСѓР±Р»РµР№";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &GameForm::button4_Click);
+			// 
 			// GameForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(836, 333);
 			this->ControlBox = false;
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox6);
@@ -273,7 +286,7 @@ namespace MilkClicker {
 			this->Controls->Add(this->pictureBox1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GameForm";
-			this->Text = L"MilkClicker | Ферма";
+			this->Text = L"MilkClicker | Р¤РµСЂРјР°";
 			this->Activated += gcnew System::EventHandler(this, &GameForm::GameForm_Activated);
 			this->Load += gcnew System::EventHandler(this, &GameForm::GameForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -299,7 +312,6 @@ namespace MilkClicker {
 		pictureBox1->Controls->Add(pictureBox4);
 		pictureBox1->Controls->Add(pictureBox5);
 		
-		
 	}
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Form^ menuform = this->Owner;
@@ -307,15 +319,74 @@ namespace MilkClicker {
 		this->Hide();
 	}
 	private: System::Void GameForm_Activated(System::Object^ sender, System::EventArgs^ e) {
-		label1->Text = "Доярка: " + this->NickName;
-		balancemoney = shopform->balancemoney;
-		label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
+		label1->Text = "Р”РѕСЏСЂРєР°: " + this->NickName;
+		label3->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
+		if (this->shopform->bucket == 1)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket.png";
+			backpack = 10;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+		}
+		else if (this->shopform->bucket == 2)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket-rubber1.png";
+			backpack = 50;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+		}
+		else if (this->shopform->bucket == 3)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket-firefighter2.png";
+			backpack = 100;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+		}
+		else if (this->shopform->bucket == 4)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket-silver3.png";
+			backpack = 500;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+		}
+		else if (this->shopform->bucket == 5)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket-gold4.png";
+			backpack = 1000;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+		}
+		else if (this->shopform->bucket == 6)
+		{
+			this->pictureBox5->ImageLocation = "sprites\\bucket-blackhole5.png";
+			backpack = 2147483646;
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + " Р»РёС‚СЂРѕРІ";
+		}
+		if (this->shopform->korm == 1)
+		{
+			upgrade = 1;
+		}
+		else if (this->shopform->korm == 2)
+		{
+			upgrade = 2;
+		}
+		else if (this->shopform->korm == 3)
+		{
+			upgrade = 5;
+		}
+		else if (this->shopform->korm == 4)
+		{
+			upgrade = 10;
+		}
+		else if (this->shopform->korm == 5)
+		{
+			upgrade = 50;
+		}
+		else if (this->shopform->korm == 6)
+		{
+			upgrade = 100;
+		}
 	}
 	private: System::Void PictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (balancemilk < backpack)
 		{
 			balancemilk = balancemilk + upgrade;
-			this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
 			pictureBox6->Visible = true;
 			pictureBox7->Visible = true;
 			pictureBox8->Visible = true;
@@ -323,9 +394,9 @@ namespace MilkClicker {
 		}
 		if (balancemilk >= backpack)
 		{
-			MessageBox::Show("Ведро переполнено!\nПродайте молоко или купите ведро лучше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’РµРґСЂРѕ РїРµСЂРµРїРѕР»РЅРµРЅРѕ!\nРџСЂРѕРґР°Р№С‚Рµ РјРѕР»РѕРєРѕ РёР»Рё РєСѓРїРёС‚Рµ РІРµРґСЂРѕ Р»СѓС‡С€Рµ.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			balancemilk = backpack;
-			this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
+			this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
 		}
 
 	}
@@ -336,36 +407,53 @@ namespace MilkClicker {
 		{
 			if (randomsell == 1)
 			{
-				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось нормально.\nВы продали его по цене 1 рубль за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				balancemoney = balancemoney + balancemilk;
+				MessageBox::Show("РЎРїСѓСЃС‚СЏ " + Convert::ToString(hour) + " С‡Р°СЃРѕРІ РЅР° Р±Р°Р·Р°СЂРµ...\nРњРѕР»РѕРєРѕ РїСЂРѕРґР°Р»РѕСЃСЊ РЅРѕСЂРјР°Р»СЊРЅРѕ.\nР’С‹ РїСЂРѕРґР°Р»Рё РµРіРѕ РїРѕ С†РµРЅРµ 1 СЂСѓР±Р»СЊ Р·Р° Р»РёС‚СЂ.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				this->shopform->balancemoneysecond = this->shopform->balancemoneysecond + balancemilk;
 				balancemilk = 0;
-				this->shopform->MyVariable = Convert::ToString(balancemoney);
-				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
+				if (backpack == 2147483646)
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + " Р»РёС‚СЂРѕРІ";
+				}
+				else
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+				}
+					this->label3->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
 			}
 			else if (randomsell == 2)
 			{
-				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось замечательно, разобрали мгновенно.\nВы продали его по цене 2 рубля за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				balancemoney = balancemoney + (balancemilk * 2);
+				MessageBox::Show("РЎРїСѓСЃС‚СЏ " + Convert::ToString(hour) + " С‡Р°СЃРѕРІ РЅР° Р±Р°Р·Р°СЂРµ...\nРњРѕР»РѕРєРѕ РїСЂРѕРґР°Р»РѕСЃСЊ Р·Р°РјРµС‡Р°С‚РµР»СЊРЅРѕ, СЂР°Р·РѕР±СЂР°Р»Рё РјРіРЅРѕРІРµРЅРЅРѕ.\nР’С‹ РїСЂРѕРґР°Р»Рё РµРіРѕ РїРѕ С†РµРЅРµ 2 СЂСѓР±Р»СЏ Р·Р° Р»РёС‚СЂ.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				this->shopform->balancemoneysecond = this->shopform->balancemoneysecond + (balancemilk * 2);
 				balancemilk = 0;
-				this->shopform->MyVariable = Convert::ToString(balancemoney);
-				
-				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
+				if (backpack == 2147483646)
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + " Р»РёС‚СЂРѕРІ";
+				}
+				else
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+				}
+				this->label3->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
 			}
 			else if (randomsell == 3)
 			{
-				MessageBox::Show("Спустя " + Convert::ToString(hour) + " часов на базаре...\nМолоко продалось очень плохо.\nВы продали его по цене 0.5 рубля за литр.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				balancemoney = balancemoney + (balancemilk * 0.5);
+				MessageBox::Show("РЎРїСѓСЃС‚СЏ " + Convert::ToString(hour) + " С‡Р°СЃРѕРІ РЅР° Р±Р°Р·Р°СЂРµ...\nРњРѕР»РѕРєРѕ РїСЂРѕРґР°Р»РѕСЃСЊ РѕС‡РµРЅСЊ РїР»РѕС…Рѕ.\nР’С‹ РїСЂРѕРґР°Р»Рё РµРіРѕ РїРѕ С†РµРЅРµ 0.5 СЂСѓР±Р»СЏ Р·Р° Р»РёС‚СЂ.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				this->shopform->balancemoneysecond = this->shopform->balancemoneysecond + (balancemilk * 0.5);
 				balancemilk = 0;
-				this->shopform->MyVariable = Convert::ToString(balancemoney);
-				this->label2->Text = "Молоко: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " литров";
-				this->label3->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
+				if (backpack == 2147483646)
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + " Р»РёС‚СЂРѕРІ";
+				}
+				else
+				{
+					this->label2->Text = "РњРѕР»РѕРєРѕ: " + Convert::ToString(balancemilk) + "/" + Convert::ToString(backpack) + " Р»РёС‚СЂРѕРІ";
+				}
+				this->label3->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
 			}
 		}
 		else
 		{
-			MessageBox::Show("Ведро пусто!\nВам нечего продать.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’РµРґСЂРѕ РїСѓСЃС‚Рѕ!\nР’Р°Рј РЅРµС‡РµРіРѕ РїСЂРѕРґР°С‚СЊ.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			balancemilk = 0;
 		}
 	}
@@ -375,12 +463,23 @@ private: System::Void StruyaTimer_Tick(System::Object^ sender, System::EventArgs
 	pictureBox8->Visible = false;
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	shopform->label1->Text = "Деньги: " + this->shopform->MyVariable + " рублей";
+	shopform->label1->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
 	shopform->Show();
 	this->Hide();
 }
-private: System::Void PictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->shopform->balancemoneysecond >= 3000000)
+	{
+		this->shopform->balancemoneysecond -= 3000000;
+		this->label3->Text = "Р”РµРЅСЊРіРё: " + Convert::ToString(this->shopform->balancemoneysecond) + " СЂСѓР±Р»РµР№";
+		MessageBox::Show("Р’С‹ Р·РІРѕРЅРёС‚Рµ РІР°С€РµРјСѓ СЂРёРµР»С‚РѕСЂСѓ.\nР’С‹ РіРѕС‚РѕРІС‹ РєСѓРїРёС‚СЊ РєРІР°СЂС‚РёСЂСѓ Рё РїРѕРєСѓРїР°РµС‚Рµ РµС‘.\nР’С‹ РїСЂРёРµР·Р¶Р°РµС‚Рµ РІ РіРѕСЂРѕРґ Рё Р¶РёРІС‘С‚Рµ РґРѕР»РіРѕ Рё СЃС‡Р°СЃС‚Р»РёРІРѕ!\nРЎРїР°СЃРёР±Рѕ Р·Р° РёРіСЂСѓ <3!", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		Form^ menuform = this->Owner;
+		menuform->Close();
+	}
+	else
+	{
+		MessageBox::Show("РЈ РІР°СЃ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ СЃСЂРµРґСЃС‚РІ РЅР° РїРѕРєСѓРїРєСѓ РєРІР°СЂС‚РёСЂС‹!", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 }
 };
 }

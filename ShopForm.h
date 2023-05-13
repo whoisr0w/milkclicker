@@ -23,17 +23,38 @@ namespace MilkClicker {
 			//
 		}
 		property double balancemoney;
-
 	private:
-		String^ myVariable = "0";
+		double myVariable = 0;
+		int myVariables = 1;
+		int myVariabless = 1;
 
 	public:
-		property String^ MyVariable {
-			String^ get() {
+		property double balancemoneysecond {
+			double get() {
 				return myVariable;
 			}
-			void set(String^ value) {
+			void set(double value) {
 				myVariable = value;
+			}
+		};
+
+	public:
+		property int bucket {
+			int get() {
+				return myVariables;
+			}
+			void set(int value) {
+				myVariables = value;
+			}
+		};
+
+	public:
+		property int korm {
+			int get() {
+				return myVariabless;
+			}
+			void set(int value) {
+				myVariabless = value;
 			}
 		};
 
@@ -183,7 +204,6 @@ namespace MilkClicker {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->ImageLocation = L"sprites\\shop-bg.png";
 			this->pictureBox1->Location = System::Drawing::Point(-1, -2);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -214,7 +234,6 @@ namespace MilkClicker {
 			// pictureBox2
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->ImageLocation = L"sprites\\bucket.png";
 			this->pictureBox2->Location = System::Drawing::Point(38, 104);
 			this->pictureBox2->Name = L"pictureBox2";
@@ -578,7 +597,7 @@ namespace MilkClicker {
 			this->button3->TabIndex = 39;
 			this->button3->Text = L"Купить";
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &ShopForm::Button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &ShopForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -588,6 +607,7 @@ namespace MilkClicker {
 			this->button4->TabIndex = 40;
 			this->button4->Text = L"Купить";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &ShopForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -597,6 +617,7 @@ namespace MilkClicker {
 			this->button5->TabIndex = 41;
 			this->button5->Text = L"Купить";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &ShopForm::button5_Click);
 			// 
 			// button6
 			// 
@@ -606,6 +627,7 @@ namespace MilkClicker {
 			this->button6->TabIndex = 42;
 			this->button6->Text = L"Купить";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &ShopForm::button6_Click);
 			// 
 			// button7
 			// 
@@ -615,6 +637,7 @@ namespace MilkClicker {
 			this->button7->TabIndex = 43;
 			this->button7->Text = L"Купить";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &ShopForm::button7_Click);
 			// 
 			// button8
 			// 
@@ -634,6 +657,7 @@ namespace MilkClicker {
 			this->button9->TabIndex = 45;
 			this->button9->Text = L"Купить";
 			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &ShopForm::button9_Click);
 			// 
 			// button10
 			// 
@@ -643,6 +667,7 @@ namespace MilkClicker {
 			this->button10->TabIndex = 46;
 			this->button10->Text = L"Купить";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &ShopForm::button10_Click);
 			// 
 			// button11
 			// 
@@ -652,6 +677,7 @@ namespace MilkClicker {
 			this->button11->TabIndex = 47;
 			this->button11->Text = L"Купить";
 			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &ShopForm::button11_Click);
 			// 
 			// button12
 			// 
@@ -661,6 +687,7 @@ namespace MilkClicker {
 			this->button12->TabIndex = 48;
 			this->button12->Text = L"Купить";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &ShopForm::button12_Click);
 			// 
 			// button13
 			// 
@@ -670,6 +697,7 @@ namespace MilkClicker {
 			this->button13->TabIndex = 49;
 			this->button13->Text = L"Купить";
 			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &ShopForm::button13_Click);
 			// 
 			// ShopForm
 			// 
@@ -750,21 +778,7 @@ namespace MilkClicker {
 
 		}
 #pragma endregion
-		int bucket1 = 1;
-		int bucket2 = 0;
-		int bucket3 = 0;
-		int bucket4 = 0;
-		int bucket5 = 0;
-		int bucket6 = 0;
-		int korm1 = 1;
-		int korm2 = 0;
-		int korm3 = 0;
-		int korm4 = 0;
-		int korm5 = 0;
-		int korm6 = 0;
-		
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
 		Form^ gameform = this->Owner;
 		gameform->Show();
 		this->Hide();
@@ -783,16 +797,175 @@ namespace MilkClicker {
 		pictureBox1->Controls->Add(pictureBox12);
 		pictureBox1->Controls->Add(pictureBox13);
 	}
-private: System::Void Button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	//if (balancemoney >= 1)
-	//{
-		//balancemoney -= 1;
-		myVariable = Convert::ToString(Convert::ToDouble(myVariable) - 1);
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 100 && bucket == 1)
+	{
+		balancemoneysecond -= 100;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
 		this->button3->Text = "Выбрано";
 		this->button3->Enabled = false;
-		this->label1->Text = "Деньги: " + myVariable + " рублей";
-		
-	//}
+		this->button2->Text = "Устарело";
+		this->button2->Enabled = false;
+		bucket = 2;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели резиновое ведро.\nТеперь максимальная вместительность молока стала: 50.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлое ведро.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 500 && bucket == 2)
+	{
+		balancemoneysecond -= 500;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button4->Text = "Выбрано";
+		this->button4->Enabled = false;
+		this->button3->Text = "Устарело";
+		this->button3->Enabled = false;
+		bucket = 3;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели пожарное ведро.\nТеперь максимальная вместительность молока стала: 100.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлое ведро.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 1000 && bucket == 3)
+	{
+		balancemoneysecond -= 1000;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button5->Text = "Выбрано";
+		this->button5->Enabled = false;
+		this->button4->Text = "Устарело";
+		this->button4->Enabled = false;
+		bucket = 4;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели серебряное ведро.\nТеперь максимальная вместительность молока стала: 500.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлое ведро.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 5000 && bucket == 4)
+	{
+		balancemoneysecond -= 5000;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button6->Text = "Выбрано";
+		this->button6->Enabled = false;
+		this->button5->Text = "Устарело";
+		this->button5->Enabled = false;
+		bucket = 5;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели золотое ведро.\nТеперь максимальная вместительность молока стала: 1000.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлое ведро.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 100000 && bucket == 5)
+	{
+		balancemoneysecond -= 100000;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button7->Text = "Выбрано";
+		this->button7->Enabled = false;
+		this->button6->Text = "Устарело";
+		this->button6->Enabled = false;
+		bucket = 6;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели бездонное ведро.\nТеперь у вас никогда не закончится место в ведре.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлое ведро.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 100 && korm == 1)
+	{
+		balancemoneysecond -= 100;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button9->Text = "Выбрано";
+		this->button9->Enabled = false;
+		this->button8->Text = "Устарело";
+		this->button8->Enabled = false;
+		korm = 2;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели комбикорм.\nТеперь вы доите на 1 литр больше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлый корм.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 500 && korm == 2)
+	{
+		balancemoneysecond -= 500;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button10->Text = "Выбрано";
+		this->button10->Enabled = false;
+		this->button9->Text = "Устарело";
+		this->button9->Enabled = false;
+		korm = 3;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели корм из сена.\nТеперь вы доите на 3 литра больше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлый корм.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 1000 && korm == 3)
+	{
+		balancemoneysecond -= 1000;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button11->Text = "Выбрано";
+		this->button11->Enabled = false;
+		this->button10->Text = "Устарело";
+		this->button10->Enabled = false;
+		korm = 4;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели корм из травы марианской впадины.\nТеперь вы доите на 5 литров больше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлый корм.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 5000 && korm == 4)
+	{
+		balancemoneysecond -= 100;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button12->Text = "Выбрано";
+		this->button12->Enabled = false;
+		this->button11->Text = "Устарело";
+		this->button11->Enabled = false;
+		korm = 5;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели корм из пыльцы лунного цвета.\nТеперь вы доите на 40 литров больше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлый корм.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->balancemoneysecond >= 100000 && korm == 5)
+	{
+		balancemoneysecond -= 100000;
+		this->label1->Text = "Деньги: " + Convert::ToString(balancemoneysecond) + " рублей";
+		this->button13->Text = "Выбрано";
+		this->button13->Enabled = false;
+		this->button12->Text = "Устарело";
+		this->button12->Enabled = false;
+		korm = 6;
+		MessageBox::Show("Поздравляю с покупкой!\nВы приобрели МолоЧип 2000.\nТеперь вы доите на 50 литров больше.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	else
+	{
+		MessageBox::Show("У вас недостаточно средств или вы ещё не приобрели прошлый корм.", "MilkClicker", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 }
 };
 }
